@@ -139,18 +139,13 @@ ul {
 .search-btn {
     float: right;
     padding: 0 23px;
+    line-height: 46.5px;
 }
 
 .search-btn:hover {
     background-color: #f44336;
     cursor: pointer;
 }
-
-.search-icon {
-    line-height: 46.5px;
-}
-
-
 
 
 /* SLIDER */
