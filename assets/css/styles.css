@@ -8,6 +8,7 @@
 html {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -142,6 +143,7 @@ ul {
     line-height: 46.5px;
 }
 
+
 .search-btn:hover {
     background-color: #f44336;
     cursor: pointer;
@@ -183,16 +185,19 @@ ul {
 
 #content {
     background-color: #FFFFFF;
+    width: 100%;
+}
+
+.about,
+.tour-container,
+.contact {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 16px;
 }
 
 
 /* ABOUT SECTION */
-.about {
-    padding: 64px 16px;
-    width: 800px;
-    margin: 0 auto;
-}
-
 
 .about-description {
     margin: 15px 0;
@@ -215,12 +220,6 @@ ul {
 
 .tour {
     background-color: #000;
-}
-
-.tour-container {
-    padding: 64px 16px;
-    width: 800px;
-    margin: 0 auto;
 }
 
 .tour-tickets-list {
@@ -300,9 +299,6 @@ ul {
 
 .contact {
     background-color: #fff;
-    width: 800px;
-    margin: 0 auto;
-    padding: 64px 16px;
     font-size: 18px;
 }
 
