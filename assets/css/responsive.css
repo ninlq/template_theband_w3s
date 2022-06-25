@@ -8,8 +8,33 @@
     
 } */
 
+/* TABLET & MOBILE */
+@media (max-width: 64em) {
+    .tour .buy-ticket-btn {
+        padding: 15px 16px;
+    }
+
+    .contact-input {
+        padding: 15px;
+    }
+
+    .contact-send-btn {
+        padding: 16px 24px;
+    }
+
+    .footer-icon {
+        font-size: 30px;
+        margin: 6px;
+    }
+
+    .contact-info-item {
+        line-height: 1.9;
+    }
+}
+
+
 /* MOBILE */
-@media (max-width: 739px) {
+@media (max-width: 46.1875em) {
     #header {
         overflow: hidden;
     }
@@ -51,15 +76,22 @@
         top: 0;
     }
 
-    .col-third,
-    .col-half {
+    .slider-content-wrapper {
+        display: none;
+    }
+
+    .s-col-full {
         width: 100%;
         margin-bottom: 16px;
     }
 
-    .contact-name-input,
-    .contact-email-input {
+    .s-full-width {
         width: 100%;
+    }
+
+    .contact-input {
+        width: 100%;
+        margin-top: 8px;
     }
 
 }
