@@ -7,6 +7,7 @@
     <title>The Band</title>
     <link rel="icon" href="./assets/images/favicon/favicon.ico" />
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <script src="https://kit.fontawesome.com/fa728d61a5.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -15,7 +16,7 @@
         
         <header id="header">
 
-            <!--START: NAVIGATION -->
+            <!-- BEGIN: NAVIGATION -->
             <ul id="nav">
                 <li><a href="#">Home</a></li>
                 <li><a href="#band">Band</a></li>
@@ -27,10 +28,10 @@
                         <i class="down-arrow-icon fa-solid fa-caret-down"></i>
                     </a>
 
-                    <ul id="sub-nav">
-                        <li><a href="">Merchandise</a></li>
-                        <li><a href="">Extras</a></li>
-                        <li><a href="">Media</a></li>
+                    <ul class="sub-nav">
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
                     </ul>
 
                 </li>
@@ -40,6 +41,10 @@
 
             <div class="search-btn white-text">
                 <i class="search-icon fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div id="mobile-menu" class="mobile-menu-btn white-text">
+                <i class="menu-icon fa-solid fa-bars"></i>
             </div>
         </header>
 
@@ -53,11 +58,11 @@
         
 
 
-        <!--START: CONTENT -->
+        <!-- BEGIN: CONTENT -->
         <div id="content">
 
 
-            <!-- START: ABOUT SECTION -->
+            <!--  BEGIN: ABOUT SECTION -->
             <div id="band" class="about">
                 <h1 class="content-heading align-center">The Band</h1>
                 <p class="content-subheading align-center"><i>We love Music</i></p>
@@ -82,8 +87,7 @@
             </div>
             <!-- END: ABOUT SECTION -->
 
-
-            <!-- START: TOUR SECTION -->
+            <!--  BEGIN: TOUR SECTION -->
             <div id="tour" class="tour">
                 <div class="tour-container">
                     <h1 class="content-heading white-text align-center">Tour Dates</h1>
@@ -131,7 +135,7 @@
 
 
 
-            <!-- START: CONTACT SECTION -->
+            <!--  BEGIN: CONTACT SECTION -->
 
             <div id="contact" class="contact">
                 <h1 class="content-heading align-center">Contact</h1>
@@ -172,6 +176,10 @@
 
     </main>
 
+
+
+
+    <!--  BEGIN: BUY TICKET MODAL -->
     <div class="modal js-modal">
         <div class="modal-container js-modal-container">
 
@@ -209,8 +217,12 @@
             </footer>
         </div>
     </div>
+    <!-- END: BUY TICKET MODAL -->
 
-    <!-- SHOW/HIDE MODAL -->
+
+
+
+    <!-- JS: SHOW/HIDE MODAL -->
     <script>
         const buyBtns = document.querySelectorAll('.js-buy-ticket')
         const modal = document.querySelector('.js-modal')
@@ -238,6 +250,39 @@
         modalContainer.addEventListener('click', function (event) {
             event.stopPropagation()
         })
+    </script>
+
+    <!-- JS: MOBILE RESPONSIVE -->
+    <script>
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHeight = header.clientHeight;
+
+        // Close/Open Mobile Menu
+        mobileMenu.onclick = function () {
+            var isClosed = header.clientHeight === headerHeight;
+            if (isClosed) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }
+
+        // Auto close when click a button in Menu
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            
+            menuItem.onclick = function(event) {
+                var parentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('sub-nav');
+                if (parentMenu) {
+                    event.preventDefault();
+                } else {
+                    header.style.height = null;  
+                }
+            }
+        }
     </script>
 </body>
 </html>
